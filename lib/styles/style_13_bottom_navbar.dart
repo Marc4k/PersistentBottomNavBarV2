@@ -3,6 +3,7 @@ part of "../persistent_bottom_nav_bar_v2.dart";
 class Style13BottomNavBar extends StatelessWidget {
   Style13BottomNavBar({
     required this.navBarConfig,
+    required this.onMiddleItemPressed,
     this.navBarDecoration = const NavBarDecoration(),
     super.key,
   }) : assert(
@@ -12,6 +13,7 @@ class Style13BottomNavBar extends StatelessWidget {
 
   final NavBarConfig navBarConfig;
   final NavBarDecoration navBarDecoration;
+  final VoidCallback onMiddleItemPressed;
 
   Widget _buildItem(BuildContext context, ItemConfig item, bool isSelected) =>
       Column(
@@ -126,9 +128,7 @@ class Style13BottomNavBar extends StatelessWidget {
           top: 0,
           child: Center(
             child: GestureDetector(
-              onTap: () {
-                navBarConfig.onItemSelected(midIndex);
-              },
+              onTap: onMiddleItemPressed,
               child: _buildMiddleItem(
                 navBarConfig.items[midIndex],
                 navBarConfig.selectedIndex == midIndex,
