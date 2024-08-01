@@ -88,7 +88,10 @@ void main() {
     );
     await testStyle(
       tester,
-      (config) => Style13BottomNavBar(navBarConfig: config),
+      (config) => Style13BottomNavBar(
+        navBarConfig: config,
+        onMiddleItemPressed: () {},
+      ),
     );
     await testStyle(
       tester,

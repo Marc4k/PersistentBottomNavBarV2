@@ -917,8 +917,10 @@ void main() {
             tabs: [1, 2, 3]
                 .map((id) => tabConfig(id, defaultScreen(id)))
                 .toList(),
-            navBarBuilder: (config) =>
-                Style13BottomNavBar(navBarConfig: config),
+            navBarBuilder: (config) => Style13BottomNavBar(
+              navBarConfig: config,
+              onMiddleItemPressed: () {},
+            ),
           ),
         ),
       );
