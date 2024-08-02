@@ -108,7 +108,11 @@ class Style13BottomNavBar extends StatelessWidget {
                   return Expanded(
                     child: InkWell(
                       onTap: () {
-                        navBarConfig.onItemSelected(index);
+                        if (index == midIndex) {
+                          onMiddleItemPressed();
+                        } else {
+                          navBarConfig.onItemSelected(index);
+                        }
                       },
                       child: index == midIndex
                           ? Container()
