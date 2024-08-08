@@ -3,7 +3,6 @@
 
 library persistent_bottom_nav_bar_v2;
 
-import "dart:ffi";
 import "dart:math";
 import "dart:ui";
 
